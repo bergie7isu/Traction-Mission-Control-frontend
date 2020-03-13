@@ -21,6 +21,17 @@ class Nav extends Component {
             </NavLink>
         </div>
         <div className='nav-link'>
+            <NavLink
+              to='/Scorecard'
+              exact
+              className='link'
+              activeClassName='selected'
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              Scorecard
+            </NavLink>
+        </div>
+        <div className='nav-link'>
         <NavLink
               to='/Archive'
               exact

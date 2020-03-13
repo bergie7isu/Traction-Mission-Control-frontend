@@ -9,6 +9,7 @@ import AddIssue from './AddIssue/AddIssue';
 import EditTodo from './EditTodo/EditTodo';
 import EditIssue from './EditIssue/EditIssue';
 import Loading from './Loading/Loading';
+import Scorecard from './Scorecard/Scorecard';
 import TractionMissionControlContext from './TractionMissionControlContext';
 import data from './dummy-store';
 import config from './config';
@@ -140,6 +141,11 @@ class App extends Component {
           exact
           path='/EditIssue/:id'
           component={EditIssue}
+        />
+        <Route
+          exact
+          path='/Scorecard'
+          component={Scorecard}
         />
       </>
     )
