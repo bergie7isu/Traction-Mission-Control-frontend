@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.route-heading {
+    margin-top: 75px;
+    font-size: 36px;
+}
+
+.App {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
