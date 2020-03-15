@@ -28,6 +28,16 @@ class App extends Component {
   };
 
   componentDidMount() {
+    this.setState({
+      todos: data.todos,
+      issues: data.issues,
+      todosReady: true,
+      issuesReady: true,
+      metrics: data.metrics
+    });
+
+    if (this.state.todosReady && this.state.issuesReady) {
+
     fetch(config.API_ENDPOINT + '/api/todos')
       .then(todosResponse => {
         if (!todosResponse.ok) {
@@ -50,6 +60,9 @@ class App extends Component {
         this.setState({ issues, issuesReady: true})
       })
       .catch(issuesError => this.setState({ issuesError }));
+
+    }
+    
     this.setState({
       team: data.team,
       teamReady: true
@@ -160,6 +173,7 @@ class App extends Component {
       const contextValue = {
         todos: this.state.todos,
         issues: this.state.issues,
+        metrics: this.state.metrics,
         team: this.state.team,
         addTodo: this.handleAddTodo,
         addIssue: this.handleAddIssue,

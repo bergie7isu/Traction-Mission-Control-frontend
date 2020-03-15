@@ -193,5 +193,40 @@ export default {
       "reviewed": "yes"
     }
   ],
-  "team": ["Mark Bergstrom", "Paul Johnson", "Bob Olson", "Steve Thor", "Joel Tjepkes", "Nathan Witt"]
+  "team": ["Mark Bergstrom", "Paul Johnson", "Bob Olson", "Steve Thor", "Joel Tjepkes", "Nathan Witt"],
+  "end-of-week": "Saturday",
+  "current-week": "2020-03-14",
+  "metrics": [
+    {
+      "id": "1",
+      "who": "Mark Bergstrom",
+      "metricname": "Metric Number 1",
+      "metrictype": "Greater Than",
+      "results": [
+        
+      ],
+      "plan": [
+
+      ]
+    },
+    {
+      "id": "2",
+      "who": "Steve Thor",
+      "metricname": "Metric Number 2",
+      "metrictype": "Less Than"
+    },
+    {
+      "id": "3",
+      "who": "Joel Tjepkes",
+      "metricname": "Metric Number 3",
+      "metrictype": "Window"
+    },
+    {
+      "id": "4",
+      "who": "Nathan Witt",
+      "metricname": "Metric Number 4",
+      "metrictype": "Greater Than"
+    }
+  ]
+
 };

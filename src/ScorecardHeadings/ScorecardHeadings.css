@@ -1,0 +1,40 @@
+.scorecard-headings {
+  display: inline-flex;
+  font-weight: bold;
+}
+
+.metric-info-headings {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  left: 0;
+  background-color: rgb(255, 124, 128);
+}
+
+.metric-buttons-heading, .metric-who-heading, .metric-name-heading, .metric-results-date {
+  border: 1px black solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-buttons-heading {
+  width: 100px;
+}
+
+.metric-who-heading {
+  width: 100px;
+}
+
+.metric-name-heading {
+  width: 150px;
+}
+
+.metric-results-headings {
+  display: flex;
+  background-color: rgb(255, 124, 128);
+}
+
+.metric-results-date {
+  width: 100px;
+}

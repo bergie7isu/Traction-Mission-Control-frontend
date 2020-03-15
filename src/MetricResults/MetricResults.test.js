@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Scorecard from './Scorecard';
+import MetricResults from './Metric';
 import { BrowserRouter } from 'react-router-dom';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<BrowserRouter>
-      <Scorecard />
+      <MetricResults />
     </BrowserRouter>, div);
   ReactDOM.unmountComponentAtNode(div);
 });

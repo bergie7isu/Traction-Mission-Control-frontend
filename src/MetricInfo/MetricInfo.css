@@ -1,0 +1,30 @@
+.metric-info {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: sticky;
+  left: 0;
+  background-color: lightgray;
+}
+
+.metric-buttons, .metric-who, .metric-name {
+  border: 1px black solid;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-buttons {
+  display: flex;
+  align-items: center;
+  width: 100px;
+}
+
+.metric-who {
+  width: 100px;
+}
+
+.metric-name {
+  width: 150px;
+}
