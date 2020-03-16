@@ -13,18 +13,25 @@ class ActiveMetrics extends Component {
       <div className='active-metrics-wrapper'>
         <div className='active-metrics'>
           <ScorecardHeadings 
-            dates={this.props.dates}
+            dates_to_show={this.props.dates_to_show}
           />
-          {metrics.map(metric => 
-            <Metric
-              key={metric.id}
-              id={metric.id}
-              who={metric.who}
-              metricname={metric.metricname}
-              metrictype={metric.metrictype}
-              dates={this.props.dates}
-            />
-          )}
+          {metrics.map(metric => {
+            if (metric.status === 'active') {
+              return (
+                <Metric
+                  key={metric.id}
+                  id={metric.id}
+                  who={metric.who}
+                  metric_name={metric.metric_name}
+                  metric_type={metric.metric_type}
+                  results={metric.results}
+                  plan={metric.plan}
+                  dates={metric.dates}
+                  dates_to_show={this.props.dates_to_show}
+                />
+              )
+            }
+          })}
         </div>
       </div>
     );

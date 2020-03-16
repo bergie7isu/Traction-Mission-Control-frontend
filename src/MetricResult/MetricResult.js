@@ -9,14 +9,14 @@ class MetricResult extends Component {
     return (
       <div className='metric-result'>
         <div className='metric-actual'>
-          Metric Result
+          {this.props.result}
         </div>
         <div className='metric-plan'>
           <div className='metric-type'>
-            {`<>`}
+            {this.props.metric_type}
           </div>
           <div className='metric-goal'>
-            Plan
+            {this.props.plan}
           </div>
         </div>
       </div>

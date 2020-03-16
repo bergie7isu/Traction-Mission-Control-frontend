@@ -21,7 +21,7 @@ class ScorecardHeadings extends Component {
           </div>
         </div>
         <div className='metric-results-headings'>
-          {this.props.dates.map(date => {
+          {this.props.dates_to_show.map(date => {
             return (
               <div className='metric-results-date'>
                 {moment(date).format('MM/DD/YYYY')}

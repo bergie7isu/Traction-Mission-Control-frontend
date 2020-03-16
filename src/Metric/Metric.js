@@ -12,11 +12,14 @@ class Metric extends Component {
       <div className='metric'>
         <MetricInfo
           who={this.props.who}
-          metricname={this.props.metricname}
-          metrictype={this.props.metrictype}
+          metric_name={this.props.metric_name}
         />
         <MetricResults 
+          metric_type={this.props.metric_type}
+          results={this.props.results}
+          plan={this.props.plan}
           dates={this.props.dates}
+          dates_to_show={this.props.dates_to_show}
         />      
       </div>
     );

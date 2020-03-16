@@ -19,7 +19,7 @@ class MetricInfo extends Component {
           {this.props.who}
         </div>
         <div className='metric-name'>
-          {this.props.metricname}
+          {this.props.metric_name}
         </div>
       </div>
     );

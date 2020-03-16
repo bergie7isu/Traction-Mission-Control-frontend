@@ -11,7 +11,7 @@ class Scorecard extends Component {
   constructor(props) {
     super(props);
     this.state={
-      startDate: moment("2020-03-14").subtract(20, 'weeks').format('YYYY-MM-DD'),
+      startDate: moment("2020-03-14").subtract(12, 'weeks').format('YYYY-MM-DD'),
       endDate: moment("2020-03-14").format('YYYY-MM-DD')
     };
   };
@@ -27,9 +27,12 @@ class Scorecard extends Component {
         <Nav />
         <h1 className='route-heading'>Scorecard</h1>
         <ActiveMetrics 
-          dates={dates}
+          dates_to_show={dates}
         />
-        <ArchivedMetrics />
+        <h1 className='route-heading'>Archived Metrics</h1>
+        <ArchivedMetrics 
+          dates_to_show={dates}
+        />
       </div>
     );
   };
