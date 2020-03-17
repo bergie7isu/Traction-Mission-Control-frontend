@@ -16,6 +16,9 @@
   padding: 5px;
   margin-top: 20px;
   background-color: gray;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .filtered-issues-title, .issue-filters-title {

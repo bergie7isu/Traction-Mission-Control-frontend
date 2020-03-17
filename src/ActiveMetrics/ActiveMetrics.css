@@ -6,7 +6,6 @@
     background-color: gray;
 }
 .active-metrics {
-    border: 1px black solid;
     overflow-x: scroll;
     color: black;
     margin: 5px;

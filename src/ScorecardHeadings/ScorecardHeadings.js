@@ -10,14 +10,14 @@ class ScorecardHeadings extends Component {
     return (
       <div className='scorecard-headings'>
         <div className='metric-info-headings'>
-          <div className='metric-buttons-heading'>
-            Buttons
-          </div>
-          <div className='metric-who-heading'>
-            Who
-          </div>
-          <div className='metric-name-heading'>
-            Measurable
+          <div className='metric-buttons-heading'></div>
+          <div className='metric-info-headings-wrapper'>
+            <div className='metric-who-heading'>
+              Who
+            </div>
+            <div className='metric-name-heading'>
+              Measurable
+            </div>
           </div>
         </div>
         <div className='metric-results-headings'>

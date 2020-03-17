@@ -33,7 +33,9 @@ class App extends Component {
       issues: data.issues,
       todosReady: true,
       issuesReady: true,
-      metrics: data.metrics
+      metrics: data.metrics,
+      endOfWeek: data.endOfWeek,
+      currentWeek: data.currentWeek
     });
 
     if (this.state.todosReady && this.state.issuesReady) {
@@ -175,6 +177,8 @@ class App extends Component {
         issues: this.state.issues,
         metrics: this.state.metrics,
         team: this.state.team,
+        endOfWeek: this.state.endOfWeek,
+        currentWeek: this.state.currentWeek,
         addTodo: this.handleAddTodo,
         addIssue: this.handleAddIssue,
         editTodo: this.handleEditTodo,

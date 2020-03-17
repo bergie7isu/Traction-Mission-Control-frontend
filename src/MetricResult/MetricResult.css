@@ -11,6 +11,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  background-color: lightgray;
 }
 
 .metric-actual {
@@ -18,4 +19,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.metric-actual.green {
+  background-color: green;
+}
+
+.metric-actual.red {
+  background-color: red;
 }

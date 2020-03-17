@@ -9,29 +9,29 @@ class ActiveMetrics extends Component {
 
   render() {
     const { metrics } = this.context;
+    const metricsToDisplay = [];
+    metrics.map(metric => {
+      if (metric.status === 'active') {
+        metricsToDisplay.push(metric);
+      };
+    });
     return (
       <div className='active-metrics-wrapper'>
         <div className='active-metrics'>
           <ScorecardHeadings 
             dates_to_show={this.props.dates_to_show}
           />
-          {metrics.map(metric => {
-            if (metric.status === 'active') {
-              return (
-                <Metric
-                  key={metric.id}
-                  id={metric.id}
-                  who={metric.who}
-                  metric_name={metric.metric_name}
-                  metric_type={metric.metric_type}
-                  results={metric.results}
-                  plan={metric.plan}
-                  dates={metric.dates}
-                  dates_to_show={this.props.dates_to_show}
-                />
-              )
-            }
-          })}
+          {metricsToDisplay.map(metric => 
+            <Metric
+              key={metric.id}
+              id={metric.id}
+              who={metric.who}
+              metric_name={metric.metric_name}
+              metric_type={metric.metric_type}
+              data={metric.data}
+              dates_to_show={this.props.dates_to_show}
+            />
+          )}
         </div>
       </div>
     );

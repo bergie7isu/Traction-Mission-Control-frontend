@@ -8,10 +8,18 @@
   align-items: center;
   position: sticky;
   left: 0;
-  background-color: rgb(255, 124, 128);
+  background-color: gray;
 }
 
-.metric-buttons-heading, .metric-who-heading, .metric-name-heading, .metric-results-date {
+.metric-info-headings-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 124, 128);
+  border-top: 1px black solid;
+  border-left: 1px black solid;
+}
+
+.metric-who-heading, .metric-name-heading, .metric-results-date {
   border: 1px black solid;
   display: flex;
   align-items: center;
@@ -19,7 +27,7 @@
 }
 
 .metric-buttons-heading {
-  width: 100px;
+  width: 60px;
 }
 
 .metric-who-heading {
@@ -33,6 +41,8 @@
 .metric-results-headings {
   display: flex;
   background-color: rgb(255, 124, 128);
+  border-top: 1px black solid;
+  border-right: 1px black solid;
 }
 
 .metric-results-date {
