@@ -30,17 +30,11 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({
-      todos: data.todos,
-      issues: data.issues,
-      todosReady: true,
-      issuesReady: true,
       metrics: data.metrics,
       endOfWeek: data.endOfWeek,
       currentWeek: data.currentWeek
     });
-    
-    if (this.state.todosReady && this.state.issuesReady) {
-     
+
     fetch(config.API_ENDPOINT + '/api/todos')
       .then(todosResponse => {
         if (!todosResponse.ok) {
@@ -63,8 +57,6 @@ class App extends Component {
         this.setState({ issues, issuesReady: true})
       })
       .catch(issuesError => this.setState({ issuesError }));
-
-    }
     
     this.setState({
       team: data.team,
