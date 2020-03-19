@@ -166,6 +166,12 @@ class App extends Component {
     });
   };
 
+  handleAddMetric = newMetric => {
+    this.setState({
+      metrics: [...this.state.metrics, newMetric]
+    });
+  };
+
   renderRoutes() {
     return(
       <>
@@ -242,6 +248,7 @@ class App extends Component {
         archiveMetric: this.handleArchiveMetric,
         submitMetricResult: this.handleSubmitMetricResult,
         rollScorecard: this.handleRollScorecard,
+        addMetric: this.handleAddMetric,
       };
       return (
         <TractionMissionControlContext.Provider value={contextValue}>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TractionMissionControlContext from '../TractionMissionControlContext';
 import ValidationError from '../ValidationError/ValidationError';
 import moment from 'moment';
-import config from '../config';
+//import config from '../config';
 import './AddMetric.css';
 
 class AddMetric extends Component {
@@ -11,7 +11,7 @@ class AddMetric extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            todo: {
+            metric: {
                 value: '',
                 touched: false
             },
@@ -19,52 +19,31 @@ class AddMetric extends Component {
                 value: '',
                 touched: false
             },
-            due: {
-                value: moment(Date.now()).add(7,'d').format('YYYY-MM-DD'),
-                touched: false
-            },
-            issue: null,
-            issueText: ''
         };
     };
 
     handleSubmit = event => {
         event.preventDefault();
-        const newTodo = {
-            todo: this.state.todo.value,
+        const newMetric = {
+            id: 24,
+            sort: 10,
+            status: 'active',
             who: this.state.who.value,
+            metric_name: this.state.metric.value,
+            metric_type: ">",
+            metric_format: "dollars",
             created: moment(Date.now()).format('YYYY-MM-DD'),
-            due: this.state.due.value,
-            status: null,
-            status_date: null,
-            reviewed: 'no',
-            issue: this.state.issue
+            archived: "",
+            data: []
         };
-        fetch(config.API_ENDPOINT + `/api/todos`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newTodo)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(response.status)}
-            return response.json()
-        })
-        .then((jsonNewTodo) => {
-            this.context.addTodo(jsonNewTodo);
-            this.props.history.goBack();
-        })
-        .catch(error => {
-            console.error({ error });
-        });
+        this.context.addMetric(newMetric);
+        this.props.history.goBack();
     };
 
-    updateTodo(todo) {
+    updateMetric(metric) {
         this.setState({
-            todo: {
-                value: todo,
+            metric: {
+                value: metric,
                 touched: true
             }
         });
@@ -79,36 +58,11 @@ class AddMetric extends Component {
         });
     };
 
-    updateDue(due) {
-        this.setState({
-            due: {
-                value: due,
-                touched: true
-            }
-        });
-    };
 
-    updateIssue(issueText) {
-        const { issues } = this.context;
-        const whichIssue = issues.filter(issue => issue.issue === issueText);
-        if (whichIssue.length !== 0) {
-            const issue = whichIssue[0].id;
-            this.setState({
-                issue: issue,
-                issueText: issueText
-            });
-        } else {
-            this.setState({
-                issue: null,
-                issueText: ''
-            });
-        }
-    };
-
-    validateTodo() {
-        const todo = this.state.todo.value.trim();
-        if (todo === '') {
-            return 'Enter a to-do!'
+    validateMetric() {
+        const metric = this.state.metric.value.trim();
+        if (metric === '') {
+            return 'Enter a metric!'
         }
     };
 
@@ -119,41 +73,34 @@ class AddMetric extends Component {
         }
     };
 
-    validateDue() {
-        const due = this.state.due.value.trim();
-        if (due === '') {
-            return 'Commit to a due date!'
-        }
-    };
-
     render() {
-        const { issues } = this.context;
-        const { team } = this.context;
-        const todoError = this.validateTodo();
+        const { team, metrics } = this.context;
+        const activeMetrics = metrics.filter(metric => metric.status === 'active');
+        console.log(activeMetrics.length);
+        const metricError = this.validateMetric();
         const whoError = this.validateWho();
-        const dueError = this.validateDue();
         return (
-            <div className='add-todo'>
-                <h2 className='add-todo-title'>Add a To-do!</h2>
+            <div className='add-metric'>
+                <h2 className='add-metric-title'>Add a Metric!</h2>
                 <form
-                    className='add-todo-form'
+                    className='add-metric-form'
                     onSubmit={this.handleSubmit}>
-                        <div className='add-todo-inputs'>
-                            <div className='add-todo-todo'>
-                                <label htmlFor='todo'>
+                        <div className='add-metric-inputs'>
+                            <div className='add-metric-metric'>
+                                <label htmlFor='metric'>
                                     What's the to-do?
                                 </label>
                                 <textarea
                                     type='string'
-                                    name='todo'
-                                    id='todo'
-                                    placeholder='Action!'
-                                    onChange={e => this.updateTodo(e.target.value)}/>
+                                    name='metric'
+                                    id='metric'
+                                    placeholder='Metric!'
+                                    onChange={e => this.updateMetric(e.target.value)}/>
                             </div>
-                            {this.state.todo.touched && <ValidationError message={todoError} />}
-                            <div className='add-todo-who'>
+                            {this.state.metric.touched && <ValidationError message={metricError} />}
+                            <div className='add-metric-who'>
                                 <label htmlFor='who'>
-                                    Whose to-do is it?
+                                    Whose metric is it?
                                 </label>
                                 <select
                                     type='string'
@@ -170,48 +117,14 @@ class AddMetric extends Component {
                                 </select>
                             </div>
                             {this.state.who.touched && <ValidationError message={whoError} />}
-                            <div className='add-todo-due'>
-                                <label htmlFor='due'>
-                                    When is this to-do due?
-                                </label>
-                                <input
-                                    type='date'
-                                    name='due'
-                                    id='due'
-                                    value={this.state.due.value}
-                                    onChange={e => this.updateDue(e.target.value)}
-                                    />
-                            </div>
-                            {this.state.due.touched && <ValidationError message={dueError} />}
-                            <div className='add-todo-issue'>
-                                <label htmlFor='issue'>
-                                    What issue is this to-do related to?
-                                </label>
-                                <select
-                                    type='string'
-                                    name='issue'
-                                    id='issue'
-                                    onChange={e => this.updateIssue(e.target.value)}>
-                                        <option>--Select an issue!--</option>
-                                        {issues.map(issue =>
-                                            (issue.reviewed === 'no')
-                                                ? <option
-                                                key={issue.id}>
-                                                    {issue.issue}
-                                                </option>
-                                                : null
-                                        )}
-                                </select>
-                            </div>
                         </div>
-                        <div className='add-todo-buttons'>
+                        <div className='add-metric-buttons'>
                             <button
                                 type='submit'
                                 disabled={
-                                    this.validateTodo() ||
-                                    this.validateWho() ||
-                                    this.validateDue()}>
-                                Add To-do!
+                                    this.validateMetric() ||
+                                    this.validateWho()}>
+                                Add Metric!
                             </button>
                             <button
                                 type='button'

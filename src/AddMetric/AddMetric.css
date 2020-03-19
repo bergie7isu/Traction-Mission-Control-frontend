@@ -1,4 +1,4 @@
-.add-todo {
+.add-metric {
     border: 2px solid darkgray;
     border-radius: 10px;
     padding: 5px;
@@ -10,12 +10,12 @@
     margin-right: auto;
 }
   
-.add-todo-title {
+.add-metric-title {
     color: white;
     font-size: 26px;
 }
 
-.add-todo-todo label, .add-todo-who label, .add-todo-due label, .add-todo-issue label {
+.add-metric-metric label, .add-metric-who label {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -25,7 +25,7 @@
     font-size: 16px;
 }
 
-.add-todo-todo textarea, .add-todo-who select, .add-todo-due input, .add-todo-issue select {
+.add-metric-metric textarea, .add-metric-who select {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -35,15 +35,15 @@
     font-size: 16px;
 }
 
-.add-todo select:hover, .add-todo input:hover {
+.add-metric select:hover, .add-metric input:hover {
     cursor: pointer;
 }
 
-.add-todo-todo textarea, .add-todo-issue select {
+.add-metric-metric textarea {
     width: 95%;
 }
 
-.add-todo-todo, .add-todo-who, .add-todo-due, .add-todo-issue {
+.add-metric-metric, .add-metric-who {
     background-color: rgb(255, 124, 128);
     padding: 5px;
     border: 1px solid black;
@@ -51,7 +51,7 @@
     margin: 5px;
 }
 
-.add-todo-buttons button {
+.add-metric-buttons button {
     font-size: 16px;
     font-weight: bold;
     margin: 10px;
@@ -61,7 +61,7 @@
     transition-duration: 0.4s;
 }
   
-.add-todo-buttons button:hover:not([disabled]) {
+.add-metric-buttons button:hover:not([disabled]) {
     background-color: rgb(142, 169, 219);
     border-color: rgb(61, 108, 193);
     color: white;
