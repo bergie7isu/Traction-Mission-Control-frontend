@@ -19,8 +19,9 @@ class Todo extends Component {
       body: JSON.stringify(updatedTodo)
     })
     .then(res => {
-      if (!res.ok)
+      if (!res.ok) {
         return res.json().then(error => Promise.reject(error))
+      }
     })
     .then(() => {
       this.context.editTodo(updatedTodo);

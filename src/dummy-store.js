@@ -199,11 +199,14 @@ export default {
   "metrics": [
     {
       "id": "1",
+      "sort": "1",
       "status": "active",
       "who": "Mark Bergstrom",
       "metric_name": "Metric Number 1",
       "metric_type": ">",
       "metric_format": "dollars",
+      "created": "2020-01-01",
+      "archived": "",
       "data": [
         {
           "date": "2019-12-21",
@@ -268,17 +271,20 @@ export default {
         {
           "date": "2020-03-14",
           "plan": 130,
-          "result": 131
+          "result": null
         }
       ]
     },
     {
       "id": "2",
+      "sort": "2",
       "status": "active",
       "who": "Steve Thor",
       "metric_name": "Metric Number 2",
       "metric_type": "<",
       "metric_format": "number",
+      "created": "2020-02-01",
+      "archived": "",
       "data": [
         {
           "date": "2019-12-21",
@@ -343,17 +349,20 @@ export default {
         {
           "date": "2020-03-14",
           "plan": 130,
-          "result": 131
+          "result": null
         }
       ]
     },
     {
       "id": "3",
+      "sort": "3",
       "status": "active",
-      "who": "Joel Tjepkes",
+      "who": "Mark Bergstrom",
       "metric_name": "Metric Number 3",
-      "metric_type": "><",
-      "metric_format": "percent",
+      "metric_type": ">",
+      "metric_format": "dollars",
+      "created": "2020-01-01",
+      "archived": "",
       "data": [
         {
           "date": "2019-12-21",
@@ -362,13 +371,13 @@ export default {
         },
         {
           "date": "2019-12-28",
-          "plan": 20,
+          "plan": 22,
           "result": 21
         },
         {
           "date": "2020-01-04",
           "plan": 30,
-          "result": 31
+          "result": null
         },
         {
           "date": "2020-01-11",
@@ -418,17 +427,20 @@ export default {
         {
           "date": "2020-03-14",
           "plan": 130,
-          "result": 131
+          "result": null
         }
       ]
     },
     {
       "id": "4",
-      "status": "archived",
-      "who": "Nathan Witt",
+      "sort": "4",
+      "status": "active",
+      "who": "Steve Thor",
       "metric_name": "Metric Number 4",
-      "metric_type": ">",
-      "metric_format": "dollars",
+      "metric_type": "<",
+      "metric_format": "number",
+      "created": "2020-02-01",
+      "archived": "",
       "data": [
         {
           "date": "2019-12-21",
@@ -493,17 +505,20 @@ export default {
         {
           "date": "2020-03-14",
           "plan": 130,
-          "result": 131
+          "result": null
         }
       ]
     },
     {
       "id": "5",
-      "status": "archived",
-      "who": "Nathan Witt",
+      "sort": "5",
+      "status": "active",
+      "who": "Joel Tjepkes",
       "metric_name": "Metric Number 5",
-      "metric_type": ">",
-      "metric_format": "dollars",
+      "metric_type": "><",
+      "metric_format": "percent",
+      "created": "2020-03-01",
+      "archived": "",
       "data": [
         {
           "date": "2019-12-21",
@@ -574,11 +589,326 @@ export default {
     },
     {
       "id": "6",
+      "sort": "6",
       "status": "archived",
       "who": "Nathan Witt",
       "metric_name": "Metric Number 6",
       "metric_type": ">",
       "metric_format": "dollars",
+      "created": "2019-01-01",
+      "archived": "2020-01-01",
+      "data": [
+        {
+          "date": "2019-12-21",
+          "plan": 10,
+          "result": 11
+        },
+        {
+          "date": "2019-12-28",
+          "plan": 20,
+          "result": 21
+        },
+        {
+          "date": "2020-01-04",
+          "plan": 30,
+          "result": 31
+        },
+        {
+          "date": "2020-01-11",
+          "plan": 40,
+          "result": 41
+        },
+        {
+          "date": "2020-01-18",
+          "plan": 50,
+          "result": 51
+        },
+        {
+          "date": "2020-01-25",
+          "plan": 60,
+          "result": 61
+        },
+        {
+          "date": "2020-02-01",
+          "plan": 70,
+          "result": 71
+        },
+        {
+          "date": "2020-02-08",
+          "plan": 80,
+          "result": 81
+        },
+        {
+          "date": "2020-02-15",
+          "plan": 90,
+          "result": 91
+        },
+        {
+          "date": "2020-02-22",
+          "plan": 100,
+          "result": 101
+        },
+        {
+          "date": "2020-02-29",
+          "plan": 110,
+          "result": 111
+        },
+        {
+          "date": "2020-03-07",
+          "plan": 120,
+          "result": 121
+        },
+        {
+          "date": "2020-03-14",
+          "plan": 130,
+          "result": 131
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "sort": "7",
+      "status": "archived",
+      "who": "Nathan Witt",
+      "metric_name": "Metric Number 7",
+      "metric_type": ">",
+      "metric_format": "dollars",
+      "created": "2019-02-01",
+      "archived": "2020-02-01",
+      "data": [
+        {
+          "date": "2019-12-21",
+          "plan": 10,
+          "result": 11
+        },
+        {
+          "date": "2019-12-28",
+          "plan": 20,
+          "result": 21
+        },
+        {
+          "date": "2020-01-04",
+          "plan": 30,
+          "result": 31
+        },
+        {
+          "date": "2020-01-11",
+          "plan": 40,
+          "result": 41
+        },
+        {
+          "date": "2020-01-18",
+          "plan": 50,
+          "result": 51
+        },
+        {
+          "date": "2020-01-25",
+          "plan": 60,
+          "result": 61
+        },
+        {
+          "date": "2020-02-01",
+          "plan": 70,
+          "result": 71
+        },
+        {
+          "date": "2020-02-08",
+          "plan": 80,
+          "result": 81
+        },
+        {
+          "date": "2020-02-15",
+          "plan": 90,
+          "result": 91
+        },
+        {
+          "date": "2020-02-22",
+          "plan": 100,
+          "result": 101
+        },
+        {
+          "date": "2020-02-29",
+          "plan": 110,
+          "result": 111
+        },
+        {
+          "date": "2020-03-07",
+          "plan": null,
+          "result": 121
+        },
+        {
+          "date": "2020-03-14",
+          "plan": 130,
+          "result": null
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "sort": "8",
+      "status": "archived",
+      "who": "Nathan Witt",
+      "metric_name": "Metric Number 8",
+      "metric_type": ">",
+      "metric_format": "dollars",
+      "created": "2019-03-01",
+      "archived": "2020-03-01",
+      "data": [
+        {
+          "date": "2019-12-21",
+          "plan": 10,
+          "result": 11
+        },
+        {
+          "date": "2019-12-28",
+          "plan": 20,
+          "result": 21
+        },
+        {
+          "date": "2020-01-04",
+          "plan": 30,
+          "result": 31
+        },
+        {
+          "date": "2020-01-11",
+          "plan": 40,
+          "result": null
+        },
+        {
+          "date": "2020-01-18",
+          "plan": 50,
+          "result": 51
+        },
+        {
+          "date": "2020-01-25",
+          "plan": 60,
+          "result": 61
+        },
+        {
+          "date": "2020-02-01",
+          "plan": 70,
+          "result": 71
+        },
+        {
+          "date": "2020-02-08",
+          "plan": 80,
+          "result": 81
+        },
+        {
+          "date": "2020-02-15",
+          "plan": 90,
+          "result": 91
+        },
+        {
+          "date": "2020-02-22",
+          "plan": 100,
+          "result": 101
+        },
+        {
+          "date": "2020-02-29",
+          "plan": 110,
+          "result": 111
+        },
+        {
+          "date": "2020-03-07",
+          "plan": 120,
+          "result": 121
+        },
+        {
+          "date": "2020-03-14",
+          "plan": 130,
+          "result": 131
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "sort": "9",
+      "status": "archived",
+      "who": "Nathan Witt",
+      "metric_name": "Metric Number 9",
+      "metric_type": ">",
+      "metric_format": "dollars",
+      "created": "2019-02-01",
+      "archived": "2020-02-01",
+      "data": [
+        {
+          "date": "2019-12-21",
+          "plan": 10,
+          "result": 11
+        },
+        {
+          "date": "2019-12-28",
+          "plan": 20,
+          "result": 21
+        },
+        {
+          "date": "2020-01-04",
+          "plan": 30,
+          "result": 31
+        },
+        {
+          "date": "2020-01-11",
+          "plan": 40,
+          "result": 41
+        },
+        {
+          "date": "2020-01-18",
+          "plan": 50,
+          "result": 51
+        },
+        {
+          "date": "2020-01-25",
+          "plan": 60,
+          "result": 61
+        },
+        {
+          "date": "2020-02-01",
+          "plan": 70,
+          "result": 71
+        },
+        {
+          "date": "2020-02-08",
+          "plan": 80,
+          "result": 81
+        },
+        {
+          "date": "2020-02-15",
+          "plan": 90,
+          "result": 91
+        },
+        {
+          "date": "2020-02-22",
+          "plan": 100,
+          "result": 101
+        },
+        {
+          "date": "2020-02-29",
+          "plan": 110,
+          "result": 111
+        },
+        {
+          "date": "2020-03-07",
+          "plan": 120,
+          "result": 121
+        },
+        {
+          "date": "2020-03-14",
+          "plan": 130,
+          "result": 131
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "sort": "10",
+      "status": "archived",
+      "who": "Nathan Witt",
+      "metric_name": "Metric Number 10",
+      "metric_type": ">",
+      "metric_format": "dollars",
+      "created": "2019-03-01",
+      "archived": "2020-03-01",
       "data": [
         {
           "date": "2019-12-21",

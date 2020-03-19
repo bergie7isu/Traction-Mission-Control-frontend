@@ -6,12 +6,13 @@ import Issues from '../Issues/Issues';
 import TractionMissionControlContext from '../TractionMissionControlContext';
 import config from '../config';
 import './L10Meeting.css';
+import moment from 'moment';
 
 class L10Meeting extends Component {
   static contextType = TractionMissionControlContext;
 
   handleCloseMeeting() {
-    const { todos, issues } = this.context;
+    const { todos, issues, currentWeek } = this.context;
     todos.filter(todo => todo.reviewed === 'no' && todo.status !== null && todo.status !== 'Hold')
     .map(todo => {
       const todoId = todo.id
@@ -58,6 +59,9 @@ class L10Meeting extends Component {
       });
       return updatedIssue;
     });
+
+    const nextWeek = moment(currentWeek).add(1, 'week').format('YYYY-MM-DD');
+    this.context.rollScorecard(nextWeek);
   };
 
   render() {

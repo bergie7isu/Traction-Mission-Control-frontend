@@ -87,6 +87,7 @@ class Scorecard extends Component {
                 name='scorecard-start-date'
                 id='scorecard-start-date'
                 value={this.state.startDate}
+                onKeyDown={e => e.preventDefault()}
                 onChange={e => this.updateScorecardStartDate(e.target.value)}
               />
             </div>
@@ -99,6 +100,7 @@ class Scorecard extends Component {
                 name='scorecard-end-date'
                 id='scorecard-end-date'
                 value={this.state.endDate}
+                onKeyDown={e => e.preventDefault()}
                 onChange={e => this.updateScorecardEndDate(e.target.value)}
               />
             </div>
@@ -118,7 +120,7 @@ class Scorecard extends Component {
         <ActiveMetrics 
           dates_to_show={dates}
         />
-        <h1 className='route-heading'>Archived Metrics</h1>
+        <h1 className='route-heading-sub'>Archived Metrics</h1>
         <ArchivedMetrics 
           dates_to_show={dates}
         />

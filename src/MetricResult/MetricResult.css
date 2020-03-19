@@ -28,3 +28,12 @@
 .metric-actual.red {
   background-color: red;
 }
+
+.metric-actual.gray {
+  background-color: gray;
+}
+
+.metric-actual-input-form input {
+  text-align: center;
+  width: 90%;
+}
