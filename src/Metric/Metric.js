@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import TractionMissionControlContext from '../TractionMissionControlContext';
 import MetricResult from '../MetricResult/MetricResult';
 import './Metric.css';
@@ -10,33 +11,54 @@ class Metric extends Component {
   handleSortUp() {
     const { metrics } = this.context;
     const moveUpId = this.props.id;
-    const sortNumber = Number(metrics.find(metric => metric.id === moveUpId).sort);
+    const sortNumber = Number(metrics.find(metric => Number(metric.id) === Number(moveUpId)).sort);
     if (sortNumber !== 1) {
-      const metricToMoveUp = {...metrics.find(metric => metric.id === moveUpId), sort: sortNumber - 1};
+      const metricToMoveUp = {
+        ...metrics.find(metric => Number(metric.id) === Number(moveUpId)),
+        sort: sortNumber - 1
+      };
       const moveDownId = metrics.find(metric => Number(metric.sort) === sortNumber - 1).id;
-      const metricToMoveDown = {...metrics.find(metric => metric.id === moveDownId), sort: sortNumber};
-      this.context.sortScorecardUp(metricToMoveUp, metricToMoveDown);
+      const metricToMoveDown = {
+        ...metrics.find(metric => Number(metric.id) === Number(moveDownId)),
+        sort: sortNumber
+      };
+      const metricsToUpdate = [metricToMoveUp, metricToMoveDown];
+      this.context.editMetric(metricsToUpdate, moveUpId, moveDownId);
     };
   };
 
   handleSortDown() {
     const { metrics } = this.context;
     const moveDownId = this.props.id;
-    const sortNumber = Number(metrics.find(metric => metric.id === moveDownId).sort);
+    const sortNumber = Number(metrics.find(metric => Number(metric.id) === Number(moveDownId)).sort);
     const highestSort = metrics.filter(metric => metric.status === 'active').length;
     if (sortNumber < highestSort) {
-      const metricToMoveDown = {...metrics.find(metric => metric.id === moveDownId), sort: sortNumber + 1};
+      const metricToMoveDown = {
+        ...metrics.find(metric => Number(metric.id) === Number(moveDownId)),
+        sort: sortNumber + 1
+      };
       const moveUpId = metrics.find(metric => Number(metric.sort) === sortNumber + 1).id;
-      const metricToMoveUp = {...metrics.find(metric => metric.id === moveUpId), sort: sortNumber};
-      this.context.sortScorecardDown(metricToMoveDown, metricToMoveUp);
+      const metricToMoveUp = {
+        ...metrics.find(metric => Number(metric.id) === Number(moveUpId)),
+        sort: sortNumber
+      };
+      const metricsToUpdate = [metricToMoveUp, metricToMoveDown];
+      this.context.editMetric(metricsToUpdate);
     };
   };
 
-  handleArchive() {
+  handleResurrect() {
     const { metrics } = this.context;
     const metricId = this.props.id;
-    const metricToArchive = {...metrics.find(metric => metric.id === metricId), status: "archived", archived: moment(Date.now()).format('YYYY-MM-DD')};
-    this.context.archiveMetric(metricToArchive);
+    const sortNumber = metrics.filter(metric => metric.status === 'active').length + 1;
+    const metricToArchive = [
+      {
+        ...metrics.find(metric => Number(metric.id) === Number(metricId)),
+        status: "active",
+        sort: sortNumber
+      }
+    ];
+    this.context.editMetric(metricToArchive);
   };
 
   render() {
@@ -56,12 +78,25 @@ class Metric extends Component {
                   Down
               </button>
             </div>
-            <div className='archive-metric-button'>
+            <Link to={`/EditMetric/${this.props.id}`}>
               <button
-                className={`archive-metric ${this.props.sortButtons}`}
-                onClick={() => this.handleArchive()}>
-                  Archive
+                className={`metric-edit-button ${this.props.sortButtons}`}>
+                  Edit/Plan
               </button>
+            </Link>
+            <div className={`archive-date ${this.props.archiveDate}`}>
+              <div className='archive-date-heading'>
+                Archived:
+              </div>
+              <div className='archive-date-date'>
+                {moment(this.props.archived).format('M/D/YYYY')}
+              </div>
+              <div className='resurrect-metric-button'>
+                <button
+                  onClick={() => this.handleResurrect()}>
+                    Resurrect
+                </button>
+              </div>
             </div>
           </div>
           <div className='metric-info-wrapper'>
@@ -79,6 +114,8 @@ class Metric extends Component {
               key={this.props.id + '-' + date}
               metricId={this.props.id}
               metric_type={this.props.metric_type}
+              metric_format={this.props.metric_format}
+              decimals={this.props.decimals}
               result={this.props.data.find(result => result.date === date) || 'none'}
               date={date}
               status={this.props.status}

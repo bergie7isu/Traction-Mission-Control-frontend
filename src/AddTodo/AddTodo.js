@@ -144,7 +144,6 @@ class AddTodo extends Component {
                                     What's the to-do?
                                 </label>
                                 <textarea
-                                    type='string'
                                     name='todo'
                                     id='todo'
                                     placeholder='Action!'
@@ -156,7 +155,7 @@ class AddTodo extends Component {
                                     Whose to-do is it?
                                 </label>
                                 <select
-                                    type='string'
+                                    type='text'
                                     name='who'
                                     id='who'
                                     onChange={e => this.updateWho(e.target.value)}>
@@ -188,7 +187,7 @@ class AddTodo extends Component {
                                     What issue is this to-do related to?
                                 </label>
                                 <select
-                                    type='string'
+                                    type='text'
                                     name='issue'
                                     id='issue'
                                     onChange={e => this.updateIssue(e.target.value)}>

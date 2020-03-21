@@ -26,7 +26,7 @@ class Scorecard extends Component {
 
   updateScorecardStartDate(date) {
     const { endOfWeek } = this.context;
-    if (date === '') {
+    if (date === '' || date > this.state.endDate) {
       return;
     };
     if (moment(date).day() === Number(endOfWeek)) {
@@ -36,13 +36,13 @@ class Scorecard extends Component {
     } else {
       this.setState({
         startDate: moment(date).add(6 - moment(date).day(), 'days').format('YYYY-MM-DD')
-      })
+      });
     };
   };
   
   updateScorecardEndDate(date) {
     const { endOfWeek } = this.context;
-    if (date === '') {
+    if (date === '' || date < this.state.startDate) {
       return;
     };
     if (moment(date).day() === Number(endOfWeek)) {
@@ -52,7 +52,7 @@ class Scorecard extends Component {
     } else {
       this.setState({
         endDate: moment(date).add(6 - moment(date).day(), 'days').format('YYYY-MM-DD')
-      })
+      });
     };
   };
 

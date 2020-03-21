@@ -12,7 +12,7 @@
 }
 
 .metric-buttons {
-  width: 60px;
+  width: 70px;
 }
 
 .metric-info-wrapper {
@@ -38,6 +38,10 @@
   width: 100px;
 }
 
+.archive-date {
+  font-size: 12px;
+}
+
 .metric-name {
   width: 150px;
 }
@@ -47,4 +51,8 @@
   align-items: center;
   background-color: white;
   border-right: 1px black solid;
+}
+
+.archive-date-heading {
+  font-weight: bold;
 }

@@ -122,7 +122,7 @@ class FilteredIssues extends Component {
               Who:
             </label>
             <select
-              type='string'
+              type='text'
               name='who'
               id='who'
               value={this.state.who}
@@ -165,7 +165,7 @@ class FilteredIssues extends Component {
               Status:
             </label>
             <select
-              type='string'
+              type='text'
               name='status'
               id='status'
               value={this.state.status}

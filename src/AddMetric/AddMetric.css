@@ -15,7 +15,7 @@
     font-size: 26px;
 }
 
-.add-metric-metric label, .add-metric-who label {
+.add-metric-metric label, .add-metric-who label, .add-metric-type label, .add-metric-format label, .add-metric-decimals label{
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -25,7 +25,7 @@
     font-size: 16px;
 }
 
-.add-metric-metric textarea, .add-metric-who select {
+.add-metric-metric textarea, .add-metric-who select, .add-metric-type select, .add-metric-format select, .add-metric-decimals input {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -43,7 +43,7 @@
     width: 95%;
 }
 
-.add-metric-metric, .add-metric-who {
+.add-metric-metric, .add-metric-who, .add-metric-type, .add-metric-format, .add-metric-decimals {
     background-color: rgb(255, 124, 128);
     padding: 5px;
     border: 1px solid black;

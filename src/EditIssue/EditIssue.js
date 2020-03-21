@@ -145,7 +145,6 @@ class EditIssue extends Component {
                                     What's the issue?
                                 </label>
                                 <textarea
-                                    type='string'
                                     name='issue'
                                     id='issue'
                                     placeholder='Problem, idea, communication...'
@@ -158,7 +157,7 @@ class EditIssue extends Component {
                                     Whose issue is it?
                                 </label>
                                 <select
-                                    type='string'
+                                    type='text'
                                     name='who'
                                     id='who'
                                     value={this.state.who.value}

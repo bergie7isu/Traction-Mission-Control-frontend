@@ -24,7 +24,7 @@ class ScorecardHeadings extends Component {
           {this.props.dates_to_show.map(date => {
             return (
               <div className='metric-results-date' key={date}>
-                {moment(date).format('MM/DD/YYYY')}
+                {moment(date).format('M/D/YYYY')}
               </div>
             )
           })}

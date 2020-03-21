@@ -10,3 +10,20 @@
     color: black;
     margin: 5px;
 }
+
+.add-metric-button {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid rgb(142, 169, 219);
+    border-radius: 5px;
+    transition-duration: 0.4s;
+  }
+  
+  .add-metric-button:hover:not([disabled]) {
+    background-color: rgb(142, 169, 219);
+    border-color: rgb(61, 108, 193);
+    color: white;
+    cursor: pointer;
+  }

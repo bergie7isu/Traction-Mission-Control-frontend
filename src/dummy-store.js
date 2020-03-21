@@ -195,16 +195,17 @@ export default {
   ],
   "team": ["Mark Bergstrom", "Paul Johnson", "Bob Olson", "Steve Thor", "Joel Tjepkes", "Nathan Witt"],
   "endOfWeek": "6",
-  "currentWeek": "2020-03-14",
+  "currentWeek": "2020-02-22",
   "metrics": [
     {
       "id": "1",
       "sort": "1",
       "status": "active",
       "who": "Mark Bergstrom",
-      "metric_name": "Metric Number 1",
+      "metric_name": "Metric Number 1 really long name for this new metric",
       "metric_type": ">",
       "metric_format": "dollars",
+      "decimals": "2",
       "created": "2020-01-01",
       "archived": "",
       "data": [
@@ -266,7 +267,7 @@ export default {
         {
           "date": "2020-03-07",
           "plan": 120,
-          "result": 121
+          "result": null
         },
         {
           "date": "2020-03-14",
@@ -283,6 +284,7 @@ export default {
       "metric_name": "Metric Number 2",
       "metric_type": "<",
       "metric_format": "number",
+      "decimals": "1",
       "created": "2020-02-01",
       "archived": "",
       "data": [
@@ -361,6 +363,7 @@ export default {
       "metric_name": "Metric Number 3",
       "metric_type": ">",
       "metric_format": "dollars",
+      "decimals": "0",
       "created": "2020-01-01",
       "archived": "",
       "data": [
@@ -439,6 +442,7 @@ export default {
       "metric_name": "Metric Number 4",
       "metric_type": "<",
       "metric_format": "number",
+      "decimals": "5",
       "created": "2020-02-01",
       "archived": "",
       "data": [
@@ -515,8 +519,9 @@ export default {
       "status": "active",
       "who": "Joel Tjepkes",
       "metric_name": "Metric Number 5",
-      "metric_type": "><",
+      "metric_type": ">",
       "metric_format": "percent",
+      "decimals": "2",
       "created": "2020-03-01",
       "archived": "",
       "data": [
@@ -589,13 +594,14 @@ export default {
     },
     {
       "id": "6",
-      "sort": "6",
+      "sort": "1",
       "status": "archived",
-      "who": "Nathan Witt",
-      "metric_name": "Metric Number 6",
+      "who": "Mark Bergstrom",
+      "metric_name": "Metric Number 1",
       "metric_type": ">",
       "metric_format": "dollars",
-      "created": "2019-01-01",
+      "decimals": "2",
+      "created": "2020-01-01",
       "archived": "2020-01-01",
       "data": [
         {
@@ -605,7 +611,7 @@ export default {
         },
         {
           "date": "2019-12-28",
-          "plan": 20,
+          "plan": 22,
           "result": 21
         },
         {
@@ -656,24 +662,25 @@ export default {
         {
           "date": "2020-03-07",
           "plan": 120,
-          "result": 121
+          "result": null
         },
         {
           "date": "2020-03-14",
-          "plan": 130,
-          "result": 131
+          "plan": null,
+          "result": null
         }
       ]
     },
     {
       "id": "7",
-      "sort": "7",
+      "sort": "2",
       "status": "archived",
-      "who": "Nathan Witt",
-      "metric_name": "Metric Number 7",
-      "metric_type": ">",
-      "metric_format": "dollars",
-      "created": "2019-02-01",
+      "who": "Steve Thor",
+      "metric_name": "Metric Number 2",
+      "metric_type": "<",
+      "metric_format": "number",
+      "decimals": "1",
+      "created": "2020-02-01",
       "archived": "2020-02-01",
       "data": [
         {
@@ -733,7 +740,7 @@ export default {
         },
         {
           "date": "2020-03-07",
-          "plan": null,
+          "plan": 120,
           "result": 121
         },
         {
@@ -745,14 +752,15 @@ export default {
     },
     {
       "id": "8",
-      "sort": "8",
+      "sort": "3",
       "status": "archived",
-      "who": "Nathan Witt",
-      "metric_name": "Metric Number 8",
+      "who": "Mark Bergstrom",
+      "metric_name": "Metric Number 3",
       "metric_type": ">",
       "metric_format": "dollars",
-      "created": "2019-03-01",
-      "archived": "2020-03-01",
+      "decimals": "0",
+      "created": "2020-01-01",
+      "archived": "2020-01-02",
       "data": [
         {
           "date": "2019-12-21",
@@ -761,18 +769,18 @@ export default {
         },
         {
           "date": "2019-12-28",
-          "plan": 20,
+          "plan": 22,
           "result": 21
         },
         {
           "date": "2020-01-04",
           "plan": 30,
-          "result": 31
+          "result": null
         },
         {
           "date": "2020-01-11",
           "plan": 40,
-          "result": null
+          "result": 41
         },
         {
           "date": "2020-01-18",
@@ -817,20 +825,100 @@ export default {
         {
           "date": "2020-03-14",
           "plan": 130,
-          "result": 131
+          "result": null
         }
       ]
     },
     {
       "id": "9",
-      "sort": "9",
+      "sort": "4",
       "status": "archived",
-      "who": "Nathan Witt",
-      "metric_name": "Metric Number 9",
+      "who": "Steve Thor",
+      "metric_name": "Metric Number 4",
+      "metric_type": "<",
+      "metric_format": "number",
+      "decimals": "5",
+      "created": "2020-02-01",
+      "archived": "2020-01-31",
+      "data": [
+        {
+          "date": "2019-12-21",
+          "plan": 10,
+          "result": 11
+        },
+        {
+          "date": "2019-12-28",
+          "plan": 20,
+          "result": 21
+        },
+        {
+          "date": "2020-01-04",
+          "plan": 30,
+          "result": 31
+        },
+        {
+          "date": "2020-01-11",
+          "plan": 40,
+          "result": 41
+        },
+        {
+          "date": "2020-01-18",
+          "plan": 50,
+          "result": 51
+        },
+        {
+          "date": "2020-01-25",
+          "plan": 60,
+          "result": 61
+        },
+        {
+          "date": "2020-02-01",
+          "plan": 70,
+          "result": 71
+        },
+        {
+          "date": "2020-02-08",
+          "plan": 80,
+          "result": 81
+        },
+        {
+          "date": "2020-02-15",
+          "plan": 90,
+          "result": 91
+        },
+        {
+          "date": "2020-02-22",
+          "plan": 100,
+          "result": 101
+        },
+        {
+          "date": "2020-02-29",
+          "plan": 110,
+          "result": 111
+        },
+        {
+          "date": "2020-03-07",
+          "plan": 120,
+          "result": 121
+        },
+        {
+          "date": "2020-03-14",
+          "plan": 130,
+          "result": null
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "sort": "5",
+      "status": "archived",
+      "who": "Joel Tjepkes",
+      "metric_name": "Metric Number 5",
       "metric_type": ">",
-      "metric_format": "dollars",
-      "created": "2019-02-01",
-      "archived": "2020-02-01",
+      "metric_format": "percent",
+      "decimals": "2",
+      "created": "2020-03-01",
+      "archived": "2019-12-31",
       "data": [
         {
           "date": "2019-12-21",
@@ -899,83 +987,5 @@ export default {
         }
       ]
     },
-    {
-      "id": "10",
-      "sort": "10",
-      "status": "archived",
-      "who": "Nathan Witt",
-      "metric_name": "Metric Number 10",
-      "metric_type": ">",
-      "metric_format": "dollars",
-      "created": "2019-03-01",
-      "archived": "2020-03-01",
-      "data": [
-        {
-          "date": "2019-12-21",
-          "plan": 10,
-          "result": 11
-        },
-        {
-          "date": "2019-12-28",
-          "plan": 20,
-          "result": 21
-        },
-        {
-          "date": "2020-01-04",
-          "plan": 30,
-          "result": 31
-        },
-        {
-          "date": "2020-01-11",
-          "plan": 40,
-          "result": 41
-        },
-        {
-          "date": "2020-01-18",
-          "plan": 50,
-          "result": 51
-        },
-        {
-          "date": "2020-01-25",
-          "plan": 60,
-          "result": 61
-        },
-        {
-          "date": "2020-02-01",
-          "plan": 70,
-          "result": 71
-        },
-        {
-          "date": "2020-02-08",
-          "plan": 80,
-          "result": 81
-        },
-        {
-          "date": "2020-02-15",
-          "plan": 90,
-          "result": 91
-        },
-        {
-          "date": "2020-02-22",
-          "plan": 100,
-          "result": 101
-        },
-        {
-          "date": "2020-02-29",
-          "plan": 110,
-          "result": 111
-        },
-        {
-          "date": "2020-03-07",
-          "plan": 120,
-          "result": 121
-        },
-        {
-          "date": "2020-03-14",
-          "plan": 130,
-          "result": 131
-        }
-      ]
-    }
   ]
 };

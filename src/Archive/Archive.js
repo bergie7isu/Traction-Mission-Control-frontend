@@ -38,7 +38,7 @@ class Archive extends Component {
             </label>
             <select
               className='filter-select'
-              type='string'
+              type='text'
               name='select'
               id='select'
               value={this.state.selectedItem}

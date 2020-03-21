@@ -11,6 +11,7 @@ class ActiveMetrics extends Component {
   render() {
     const { metrics } = this.context;
     const metricsToDisplay = metrics.filter(metric => metric.status === 'active').sort((a, b) => a.sort - b.sort);
+    const numberOfActiveMetrics = metricsToDisplay.length;
     return (
       <div className='active-metrics-wrapper'>
         <div className='active-metrics'>
@@ -25,16 +26,20 @@ class ActiveMetrics extends Component {
               who={metric.who}
               metric_name={metric.metric_name}
               metric_type={metric.metric_type}
+              metric_format={metric.metric_format}
+              decimals={metric.decimals}
               data={metric.data}
               dates_to_show={this.props.dates_to_show}
               sortButtons=''
+              archiveDate='hidden'
             />
           )}
         </div>
         <Link to={'/AddMetric'}>
           <button
-            className='add-metric-button'>
-              Add Metric
+            className='add-metric-button'
+            disabled={Boolean(numberOfActiveMetrics >= 15)}>
+              {(numberOfActiveMetrics >= 15) ? '15 Metric Maximum Reached!' : 'Add Metric'}
           </button>
         </Link>
       </div>

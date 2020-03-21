@@ -11,6 +11,7 @@ import EditIssue from './EditIssue/EditIssue';
 import Loading from './Loading/Loading';
 import Scorecard from './Scorecard/Scorecard';
 import AddMetric from './AddMetric/AddMetric';
+import EditMetric from './EditMetric/EditMetric';
 import TractionMissionControlContext from './TractionMissionControlContext';
 import data from './dummy-store';
 import config from './config';
@@ -112,55 +113,27 @@ class App extends Component {
     });
   };
 
-  handleSortScorecardUp = (metricToMoveUp, metricToMoveDown) => {
-    const newMetrics = this.state.metrics.map(metric =>
-      (Number(metric.id) === Number(metricToMoveUp.id)) ? metricToMoveUp :
-      (Number(metric.id) === Number(metricToMoveDown.id)) ? metricToMoveDown :
-      metric
+  handleEditMetric = metricsToUpdate => {
+    const metrics = this.state.metrics;
+    const newMetrics = metrics.map(metric => 
+      (metricsToUpdate.find(updatedMetric => Number(updatedMetric.id) === Number(metric.id)))
+      ? (metricsToUpdate.find(updatedMetric => Number(updatedMetric.id) === Number(metric.id)))
+      : metric
     );
     this.setState({
       metrics: newMetrics
-    });
-  };
-
-  handleSortScorecardDown = (metricToMoveDown, metricToMoveUp) => {
-    const newMetrics = this.state.metrics.map(metric =>
-      (Number(metric.id) === Number(metricToMoveDown.id)) ? metricToMoveDown :
-      (Number(metric.id) === Number(metricToMoveUp.id)) ? metricToMoveUp :
-      metric
-    );
-    this.setState({
-      metrics: newMetrics
-    });
-  };
-
-  handleArchiveMetric = metricToArchive => {
-    const newMetrics = this.state.metrics.map(metric =>
-      (Number(metric.id) === Number(metricToArchive.id)) ? metricToArchive : metric
-    );
-    this.setState({
-      metrics: newMetrics
-    });
-  };
-
-  handleSubmitMetricResult = updatedMetric => {
-    const newMetrics = this.state.metrics.map(metric =>
-      (Number(metric.id) === Number(updatedMetric.id)) ? updatedMetric : metric
-    );
-    this.setState({
-      metrics: newMetrics
-    });
-  };
-
-  handleRollScorecard = nextWeek => {
-    this.setState({
-      currentWeek: nextWeek
     });
   };
 
   handleAddMetric = newMetric => {
     this.setState({
       metrics: [...this.state.metrics, newMetric]
+    });
+  };
+
+  handleRollScorecard = nextWeek => {
+    this.setState({
+      currentWeek: nextWeek
     });
   };
 
@@ -212,6 +185,11 @@ class App extends Component {
           path='/AddMetric'
           component={AddMetric}
         />
+        <Route
+          exact
+          path='/EditMetric/:id'
+          component={EditMetric}
+        />
       </>
     )
   };
@@ -235,12 +213,9 @@ class App extends Component {
         editIssue: this.handleEditIssue,
         deleteTodo: this.handleDeleteTodo,
         deleteIssue: this.handleDeleteIssue,
-        sortScorecardUp: this.handleSortScorecardUp,
-        sortScorecardDown: this.handleSortScorecardDown,
-        archiveMetric: this.handleArchiveMetric,
-        submitMetricResult: this.handleSubmitMetricResult,
-        rollScorecard: this.handleRollScorecard,
         addMetric: this.handleAddMetric,
+        editMetric: this.handleEditMetric,
+        rollScorecard: this.handleRollScorecard,
       };
       return (
         <TractionMissionControlContext.Provider value={contextValue}>
