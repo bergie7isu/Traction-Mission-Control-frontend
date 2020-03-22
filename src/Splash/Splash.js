@@ -51,6 +51,14 @@ class Splash extends Component {
                 <section className='rocket-wrapper'>
                     <img src={rocket} alt='rocket' className='rocket-gif-small'/>
                     <section className='splash-sub-item'>
+                        <h2 className='splash-sub-title'>Scorecard</h2>
+                        <p className='splash-sub-description'>Relentlessly monitor your organization's most important metrics, and drive action when they're off-track. Observe trends and chart the course for the future all in one spot!</p>
+                    </section>
+                    <img src={rocket} alt='rocket' className='rocket-gif-small'/>
+                </section>
+                <section className='rocket-wrapper'>
+                    <img src={rocket} alt='rocket' className='rocket-gif-small'/>
+                    <section className='splash-sub-item'>
                         <h2 className='splash-sub-title'>Archive Filtering</h2>
                         <p className='splash-sub-description'>Quickly view and filter archived to-dos and issues for yourself and your team. View historical performance data to drive accountability discussions.</p>
                     </section>

@@ -195,7 +195,7 @@ export default {
   ],
   "team": ["Mark Bergstrom", "Paul Johnson", "Bob Olson", "Steve Thor", "Joel Tjepkes", "Nathan Witt"],
   "endOfWeek": "6",
-  "currentWeek": "2020-02-29",
+  "currentWeek": "2020-03-14",
   "metrics": [
     {
       "id": "1",
@@ -667,7 +667,7 @@ export default {
         {
           "date": "2020-03-14",
           "plan": 130,
-          "result": 131
+          "result": null
         }
       ]
     },

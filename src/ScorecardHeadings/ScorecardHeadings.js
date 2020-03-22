@@ -6,36 +6,23 @@ import moment from 'moment';
 class ScorecardHeadings extends Component {
   static contextType = TractionMissionControlContext;
 
-  constructor(props) {
-    super(props);
-    this.state={
-      currentWeek: ''
-    };
-  };
-
-  componentDidMount() {
-    const { currentWeek } = this.context;
-    this.setState({
-      currentWeek: currentWeek
-    });
-  };
-
   moveCurrentWeekLeft() {
     const { currentWeek } = this.context;
+    const minDate = this.props.dates_to_show[0];
     const lastWeek = moment(currentWeek).subtract(1, 'week').format('YYYY-MM-DD');
-    this.setState({
-      currentWeek: lastWeek
-    });
-    this.context.moveCurrentWeek(lastWeek);
+    if (lastWeek >= minDate) {
+      this.context.moveCurrentWeek(lastWeek);
+    };
   };
 
   moveCurrentWeekRight() {
     const { currentWeek } = this.context;
+    const maxDate = this.props.dates_to_show[this.props.dates_to_show.length - 1];
     const nextWeek = moment(currentWeek).add(1, 'week').format('YYYY-MM-DD');
-    this.setState({
-      currentWeek: nextWeek
-    });
-    this.context.moveCurrentWeek(nextWeek);
+    if (nextWeek <= maxDate) {
+      this.context.moveCurrentWeek(nextWeek);
+    };
+    
   };
 
   render() {
@@ -52,6 +39,7 @@ class ScorecardHeadings extends Component {
               Measurable
             </div>
           </div>
+          <div className={`metric-info-headings-blocker ${this.props.type}`}></div>
         </div>
         <div className='metric-results-headings'>
           {this.props.dates_to_show.map(date => {

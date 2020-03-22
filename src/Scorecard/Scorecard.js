@@ -27,33 +27,47 @@ class Scorecard extends Component {
 
   updateScorecardStartDate(date) {
     const { endOfWeek } = this.context;
-    if (date === '' || date > this.state.endDate) {
+    const { endDate } = this.state;
+    if (date === '' || date > endDate) {
       return;
     };
     if (moment(date).day() === Number(endOfWeek)) {
       this.setState({
         startDate: moment(date).format('YYYY-MM-DD')
       });
+      if (moment(endDate).diff(date, 'week') < 12) {
+        this.updateScorecardEndDate(moment(date).add(12, 'weeks').format('YYYY-MM-DD'));
+      };
     } else {
       this.setState({
         startDate: moment(date).add(6 - moment(date).day(), 'days').format('YYYY-MM-DD')
       });
+      if (moment(endDate).diff(moment(date).add(6 - moment(date).day(), 'days').format('YYYY-MM-DD'), 'week') < 12) {
+        this.updateScorecardEndDate(moment(moment(date).add(6 - moment(date).day(), 'days').format('YYYY-MM-DD')).add(12, 'weeks').format('YYYY-MM-DD'));
+      };
     };
   };
   
   updateScorecardEndDate(date) {
     const { endOfWeek } = this.context;
-    if (date === '' || date < this.state.startDate) {
+    const { startDate } = this.state
+    if (date === '' || date < startDate) {
       return;
     };
     if (moment(date).day() === Number(endOfWeek)) {
       this.setState({
         endDate: moment(date).format('YYYY-MM-DD')
       });
+      if (moment(date).diff(startDate, 'week') < 12) {
+        this.updateScorecardStartDate(moment(date).subtract(12, 'weeks').format('YYYY-MM-DD'));
+      };
     } else {
       this.setState({
         endDate: moment(date).add(6 - moment(date).day(), 'days').format('YYYY-MM-DD')
       });
+      if (moment(date).add(6 - moment(date).day()).diff(startDate, 'week') < 12) {
+        this.updateScorecardStartDate(moment(date).add(6 - moment(date).day(), 'days').subtract(12, 'weeks').format('YYYY-MM-DD'));
+      };
     };
   };
 

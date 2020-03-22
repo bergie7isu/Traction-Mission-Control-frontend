@@ -9,6 +9,7 @@
   position: sticky;
   left: 0;
   background-color: gray;
+  z-index: 100;
 }
 
 .metric-info-headings-wrapper {
@@ -59,12 +60,11 @@
 }
 
 .metric-results-date-current-week-wrapper.active {
+  height: 32px;
+  width: 100%;
   font-size: 12px;
   position: absolute;
   top: -35px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
 }
@@ -76,4 +76,12 @@
 .metric-results-date-current-week {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.metric-info-headings-blocker.active {
+  height: 35px;
+  width: 100%;
+  position: absolute;
+  top: -35px;
+  background-color: gray;
 }

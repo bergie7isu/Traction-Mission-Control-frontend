@@ -7,7 +7,7 @@
   text-align: center;
   padding: 5px;
   border-radius: 0 0 30px 30px;
-  z-index: 1;
+  z-index: 101;
   border-bottom: 1px solid black;
 }
 
