@@ -15,6 +15,7 @@ class ArchivedMetrics extends Component {
         <div className='archived-metrics'>
           <ScorecardHeadings 
             dates_to_show={this.props.dates_to_show}
+            type='archived'
           />
           {metricsToDisplay.map(metric => 
             <Metric

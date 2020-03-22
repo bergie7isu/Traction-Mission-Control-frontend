@@ -9,6 +9,7 @@
     overflow-x: scroll;
     color: black;
     margin: 5px;
+    padding-top: 25px;
 }
 
 .add-metric-button {

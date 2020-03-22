@@ -8,11 +8,12 @@ import moment from 'moment';
 
 class Scorecard extends Component {
   static contextType = TractionMissionControlContext;
+
   constructor(props) {
     super(props);
     this.state={
-      startDate: moment("2020/03/14").subtract(12, 'weeks').format('YYYY-MM-DD'),
-      endDate: moment("2020/03/14").format('YYYY-MM-DD')
+      startDate: '',
+      endDate: '',
     };
   };
 
@@ -20,7 +21,7 @@ class Scorecard extends Component {
     const { currentWeek } = this.context;
     this.setState({
       startDate: moment(currentWeek).subtract(12, 'weeks').format('YYYY-MM-DD'),
-      endDate: moment(currentWeek).format('YYYY-MM-DD')
+      endDate: moment(currentWeek).format('YYYY-MM-DD'),
     });
   };
 
@@ -62,8 +63,8 @@ class Scorecard extends Component {
       startDate: moment(currentWeek).subtract(12, 'weeks').format('YYYY-MM-DD'),
       endDate: moment(currentWeek).format('YYYY-MM-DD')
     });
-  }
-  
+  };
+
   render() {
     const { endOfWeek } = this.context;
     const dates = [this.state.startDate];
@@ -112,9 +113,6 @@ class Scorecard extends Component {
           </div>
           <div className='scorecard-date-explanation'>
             (weeks end on {moment().day(endOfWeek).format('dddd')})
-            <button className='edit-end-of-week'>
-              Edit
-            </button>
           </div>  
         </div>
         <ActiveMetrics 

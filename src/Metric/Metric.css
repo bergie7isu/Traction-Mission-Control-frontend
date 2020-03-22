@@ -9,6 +9,7 @@
   position: sticky;
   left: 0;
   background-color: gray;
+  z-index: 100;
 }
 
 .metric-buttons {

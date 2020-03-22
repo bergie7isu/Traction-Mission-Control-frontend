@@ -17,6 +17,7 @@ class ActiveMetrics extends Component {
         <div className='active-metrics'>
           <ScorecardHeadings 
             dates_to_show={this.props.dates_to_show}
+            type='active'
           />
           {metricsToDisplay.map(metric => 
             <Metric

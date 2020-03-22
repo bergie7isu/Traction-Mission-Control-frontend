@@ -131,9 +131,9 @@ class App extends Component {
     });
   };
 
-  handleRollScorecard = nextWeek => {
+  handleMoveCurrentWeek = newCurrentWeek => {
     this.setState({
-      currentWeek: nextWeek
+      currentWeek: newCurrentWeek
     });
   };
 
@@ -215,7 +215,7 @@ class App extends Component {
         deleteIssue: this.handleDeleteIssue,
         addMetric: this.handleAddMetric,
         editMetric: this.handleEditMetric,
-        rollScorecard: this.handleRollScorecard,
+        moveCurrentWeek: this.handleMoveCurrentWeek,
       };
       return (
         <TractionMissionControlContext.Provider value={contextValue}>

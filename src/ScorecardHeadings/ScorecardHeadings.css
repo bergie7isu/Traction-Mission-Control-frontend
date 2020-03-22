@@ -19,6 +19,10 @@
   border-left: 1px black solid;
 }
 
+.current-week.active {
+  background-color: yellow;
+}
+
 .metric-who-heading, .metric-name-heading, .metric-results-date {
   border: 1px black solid;
   display: flex;
@@ -47,4 +51,29 @@
 
 .metric-results-date {
   width: 100px;
+}
+
+.metric-results-headings .current-week {
+  display: block;
+  position: relative;
+}
+
+.metric-results-date-current-week-wrapper.active {
+  font-size: 12px;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.metric-results-date-current-week-wrapper.archived {
+  display: none;
+}
+
+.metric-results-date-current-week {
+  margin-left: 5px;
+  margin-right: 5px;
 }

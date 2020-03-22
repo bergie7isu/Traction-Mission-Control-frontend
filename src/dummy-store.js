@@ -195,7 +195,7 @@ export default {
   ],
   "team": ["Mark Bergstrom", "Paul Johnson", "Bob Olson", "Steve Thor", "Joel Tjepkes", "Nathan Witt"],
   "endOfWeek": "6",
-  "currentWeek": "2020-02-22",
+  "currentWeek": "2020-02-29",
   "metrics": [
     {
       "id": "1",
@@ -263,6 +263,85 @@ export default {
           "date": "2020-02-29",
           "plan": 110,
           "result": 111
+        },
+        {
+          "date": "2020-03-07",
+          "plan": 120,
+          "result": null
+        },
+        {
+          "date": "2020-03-14",
+          "plan": 130,
+          "result": null
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "sort": "6",
+      "status": "active",
+      "who": "Mark Bergstrom",
+      "metric_name": "Metric Number 11 it's a new one",
+      "metric_type": ">",
+      "metric_format": "dollars",
+      "decimals": "2",
+      "created": "2020-03-21",
+      "archived": "",
+      "data": [
+        {
+          "date": "2019-12-21",
+          "plan": 10,
+          "result": null
+        },
+        {
+          "date": "2019-12-28",
+          "plan": 22,
+          "result": null
+        },
+        {
+          "date": "2020-01-04",
+          "plan": 30,
+          "result": null
+        },
+        {
+          "date": "2020-01-11",
+          "plan": 40,
+          "result": null
+        },
+        {
+          "date": "2020-01-18",
+          "plan": 50,
+          "result": null
+        },
+        {
+          "date": "2020-01-25",
+          "plan": 60,
+          "result": null
+        },
+        {
+          "date": "2020-02-01",
+          "plan": 70,
+          "result": null
+        },
+        {
+          "date": "2020-02-08",
+          "plan": 80,
+          "result": null
+        },
+        {
+          "date": "2020-02-15",
+          "plan": 90,
+          "result": null
+        },
+        {
+          "date": "2020-02-22",
+          "plan": 100,
+          "result": null
+        },
+        {
+          "date": "2020-02-29",
+          "plan": 110,
+          "result": null
         },
         {
           "date": "2020-03-07",

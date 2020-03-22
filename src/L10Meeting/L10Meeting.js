@@ -61,7 +61,7 @@ class L10Meeting extends Component {
     });
 
     const nextWeek = moment(currentWeek).add(1, 'week').format('YYYY-MM-DD');
-    this.context.rollScorecard(nextWeek);
+    this.context.moveCurrentWeek(nextWeek);
   };
 
   render() {
